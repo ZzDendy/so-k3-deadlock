@@ -1,0 +1,289 @@
+{
+  "keterangan": "Data contoh (Silberschatz Bab 7). Ganti angka di sini bila matriks kelas sudah dibagikan, lalu jalankan ulang: python3 banker.py",
+  "sumber": "contoh-buku",
+  "proses": [
+    "P0",
+    "P1",
+    "P2",
+    "P3",
+    "P4"
+  ],
+  "tugas": {
+    "P0": "Penjadwal irigasi otomatis",
+    "P1": "Kontrol pompa air",
+    "P2": "Kontrol zona lahan besar",
+    "P3": "Pembaca kelembapan tanah",
+    "P4": "Pencatat telemetri"
+  },
+  "sumber_daya": {
+    "A": "Pompa air",
+    "B": "Katup irigasi",
+    "C": "Bus sensor I2C"
+  },
+  "total": [
+    10,
+    5,
+    7
+  ],
+  "available_awal": [
+    3,
+    3,
+    2
+  ],
+  "allocation": [
+    [
+      0,
+      1,
+      0
+    ],
+    [
+      2,
+      0,
+      0
+    ],
+    [
+      3,
+      0,
+      2
+    ],
+    [
+      2,
+      1,
+      1
+    ],
+    [
+      0,
+      0,
+      2
+    ]
+  ],
+  "max": [
+    [
+      7,
+      5,
+      3
+    ],
+    [
+      3,
+      2,
+      2
+    ],
+    [
+      9,
+      0,
+      2
+    ],
+    [
+      2,
+      2,
+      2
+    ],
+    [
+      4,
+      3,
+      3
+    ]
+  ],
+  "need": [
+    [
+      7,
+      4,
+      3
+    ],
+    [
+      1,
+      2,
+      2
+    ],
+    [
+      6,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      1
+    ],
+    [
+      4,
+      3,
+      1
+    ]
+  ],
+  "total_alokasi": [
+    7,
+    2,
+    5
+  ],
+  "safe": true,
+  "safe_sequence": [
+    "P1",
+    "P3",
+    "P0",
+    "P2",
+    "P4"
+  ],
+  "jejak": [
+    {
+      "proses": "P1",
+      "need": [
+        1,
+        2,
+        2
+      ],
+      "work_sebelum": [
+        3,
+        3,
+        2
+      ],
+      "work_sesudah": [
+        5,
+        3,
+        2
+      ]
+    },
+    {
+      "proses": "P3",
+      "need": [
+        0,
+        1,
+        1
+      ],
+      "work_sebelum": [
+        5,
+        3,
+        2
+      ],
+      "work_sesudah": [
+        7,
+        4,
+        3
+      ]
+    },
+    {
+      "proses": "P0",
+      "need": [
+        7,
+        4,
+        3
+      ],
+      "work_sebelum": [
+        7,
+        4,
+        3
+      ],
+      "work_sesudah": [
+        7,
+        5,
+        3
+      ]
+    },
+    {
+      "proses": "P2",
+      "need": [
+        6,
+        0,
+        0
+      ],
+      "work_sebelum": [
+        7,
+        5,
+        3
+      ],
+      "work_sesudah": [
+        10,
+        5,
+        5
+      ]
+    },
+    {
+      "proses": "P4",
+      "need": [
+        4,
+        3,
+        1
+      ],
+      "work_sebelum": [
+        10,
+        5,
+        5
+      ],
+      "work_sesudah": [
+        10,
+        5,
+        7
+      ]
+    }
+  ],
+  "uji_permintaan": [
+    {
+      "proses": "P1",
+      "request": [
+        1,
+        0,
+        2
+      ],
+      "request_le_need": true,
+      "request_le_available": true,
+      "available_sesudah": [
+        2,
+        3,
+        0
+      ],
+      "allocation_baru": [
+        3,
+        0,
+        2
+      ],
+      "need_baru": [
+        0,
+        2,
+        0
+      ],
+      "safe": true,
+      "urutan": [
+        "P1",
+        "P3",
+        "P0",
+        "P2",
+        "P4"
+      ],
+      "dikabulkan": true,
+      "alasan": "safe state",
+      "label": "Kasus A",
+      "catatan": "Permintaan yang masih menjaga safe state"
+    },
+    {
+      "proses": "P0",
+      "request": [
+        0,
+        2,
+        0
+      ],
+      "request_le_need": true,
+      "request_le_available": true,
+      "available_sesudah": [
+        2,
+        1,
+        0
+      ],
+      "allocation_baru": [
+        0,
+        3,
+        0
+      ],
+      "need_baru": [
+        7,
+        2,
+        3
+      ],
+      "safe": false,
+      "urutan": [],
+      "dikabulkan": false,
+      "alasan": "menyebabkan unsafe state",
+      "label": "Kasus B",
+      "catatan": "Setelah Kasus A dikabulkan; permintaan ini membawa sistem ke unsafe state"
+    }
+  ]
+}

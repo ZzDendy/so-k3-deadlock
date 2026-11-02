@@ -1,0 +1,48 @@
+{
+  "keterangan": "Data contoh (Silberschatz Bab 7). Ganti angka di sini bila matriks kelas sudah dibagikan, lalu jalankan ulang: python3 banker.py",
+  "sumber": "contoh-buku",
+  "proses": ["P0", "P1", "P2", "P3", "P4"],
+  "tugas": {
+    "P0": "Penjadwal irigasi otomatis",
+    "P1": "Kontrol pompa air",
+    "P2": "Kontrol zona lahan besar",
+    "P3": "Pembaca kelembapan tanah",
+    "P4": "Pencatat telemetri"
+  },
+  "sumber_daya": {
+    "A": "Pompa air",
+    "B": "Katup irigasi",
+    "C": "Bus sensor I2C"
+  },
+  "total": [10, 5, 7],
+  "allocation": [
+    [0, 1, 0],
+    [2, 0, 0],
+    [3, 0, 2],
+    [2, 1, 1],
+    [0, 0, 2]
+  ],
+  "max": [
+    [7, 5, 3],
+    [3, 2, 2],
+    [9, 0, 2],
+    [2, 2, 2],
+    [4, 3, 3]
+  ],
+  "available": [3, 3, 2],
+  "permintaan_uji": [
+    {
+      "label": "Kasus A",
+      "proses": "P1",
+      "request": [1, 0, 2],
+      "catatan": "Permintaan yang masih menjaga safe state"
+    },
+    {
+      "label": "Kasus B",
+      "proses": "P0",
+      "request": [0, 2, 0],
+      "catatan": "Setelah Kasus A dikabulkan; permintaan ini membawa sistem ke unsafe state",
+      "setelah": "Kasus A"
+    }
+  ]
+}
