@@ -464,7 +464,7 @@ def kepingan(d):
                          "algoritma keamanan Banker, hasil uji permintaan sumber daya, dan "
                          "rancangan strategi pencegahan"),
         ("Lokasi di portofolio", REPO),
-        ("Dipakai untuk", "Level 5 Puzzle UTS — menutup rantai kepingan #1 sampai #6. Sumber "
+        ("Dipakai untuk", "Level 5 Puzzle UTS — menutup rantai kepingan #1 sampai #7. Sumber "
                           "daya bersama yang diperebutkan di sini adalah pompa, katup, dan bus "
                           "I2C yang sama dengan simpul-simpul pada kepingan #1, dijalankan oleh "
                           "tugas-tugas yang diamati pada kepingan #2 dan #3, dan disinkronkan "
